@@ -7,13 +7,12 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_story_detail.*
-import kotlinx.android.synthetic.main.app_bar.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import yovi.putra.hackernews.R
 import yovi.putra.hackernews.core.base.BaseToolbarActivity
 import yovi.putra.hackernews.core.utils.network.NetworkThrowable.errorMessage
 import yovi.putra.hackernews.core.utils.state.ResultState
-import yovi.putra.hackernews.core.utils.toDate
+import yovi.putra.hackernews.core.utils.toDateString
 import yovi.putra.hackernews.core.utils.ui.toast
 import yovi.putra.hackernews.data.entity.Comment
 import yovi.putra.hackernews.data.entity.Story
@@ -51,7 +50,7 @@ class StoryDetailActivity : BaseToolbarActivity() {
         setToolbar(R.id.toolbar)
         tv_title.text = data.title
         tv_author.text = data.by
-        tv_date.text = data.time?.toDate()
+        tv_date.text = data.time?.toDateString()
         tv_description.text = data.url
 
         list_item.layoutManager = LinearLayoutManager(this)
