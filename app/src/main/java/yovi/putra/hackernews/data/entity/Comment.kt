@@ -10,6 +10,6 @@ data class Comment(
     val kids: MutableList<String>?,
     val parent: Int?,
     val text: String?,
-    val time: Int?,
+    val time: Long?,
     val type: String?
 ) : Parcelable

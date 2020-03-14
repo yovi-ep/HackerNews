@@ -51,7 +51,7 @@ class StoryDetailActivity : BaseToolbarActivity() {
         tv_title.text = data.title
         tv_author.text = data.by
         tv_date.text = data.time?.toDateString()
-        tv_description.text = data.url
+        tv_description.text = String.format("%s\n%s", data.text, data.url)
 
         list_item.layoutManager = LinearLayoutManager(this)
         list_item.overScrollMode = View.OVER_SCROLL_NEVER

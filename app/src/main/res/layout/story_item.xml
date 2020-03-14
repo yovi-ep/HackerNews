@@ -66,5 +66,16 @@
             app:layout_constraintStart_toEndOf="@+id/img_score"
             app:layout_constraintTop_toTopOf="@+id/img_score"
             tools:text="9000" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            style="@style/TextView.Small"
+            android:textStyle="italic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_extra_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/img_score"
+            tools:text="20/02/2020" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

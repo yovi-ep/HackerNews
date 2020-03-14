@@ -8,6 +8,7 @@ import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.story_item.view.*
 import yovi.putra.hackernews.R
 import yovi.putra.hackernews.core.utils.fromHtml
+import yovi.putra.hackernews.core.utils.toDateString
 import yovi.putra.hackernews.data.entity.Story
 
 class DashboardAdapter(private val listener: (Story) -> Unit)
@@ -40,6 +41,7 @@ class DashboardAdapter(private val listener: (Story) -> Unit)
                 tv_title.text = data.title?.fromHtml()
                 tv_commenter.text = (data.kids?.size ?: 0).toString()
                 tv_score.text = (data.score ?: 0).toString()
+                tv_date.text = data.time?.toDateString()
                 setOnClickListener { listener(data) }
             }
         }

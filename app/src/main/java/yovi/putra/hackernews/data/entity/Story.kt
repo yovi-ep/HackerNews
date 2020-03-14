@@ -10,7 +10,8 @@ data class Story(
     val id: Int? = 0,
     val kids: MutableList<Int>? = mutableListOf(),
     val score: Int? = 0,
-    val time: Int? = 0,
+    val time: Long? = 0,
+    val text: String? = "",
     val title: String? = "",
     val type: String? = "",
     val url: String? = ""
