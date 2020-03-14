@@ -1,7 +1,8 @@
-package yovi.putra.hackernews
+package yovi.putra.hackernews.features.dashboard
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import yovi.putra.hackernews.R
 
 class MainActivity : AppCompatActivity() {
 

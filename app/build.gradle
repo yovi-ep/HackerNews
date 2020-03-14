@@ -18,7 +18,11 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            buildConfigField "String", "BASE_URL", '"https://hacker-news.firebaseio.com/v0/"'
+        }
         release {
+            buildConfigField "String", "BASE_URL", '"https://hacker-news.firebaseio.com/v0/"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
