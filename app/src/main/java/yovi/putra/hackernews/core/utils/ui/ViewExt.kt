@@ -9,3 +9,5 @@ fun View.visible() {
 fun View.invisible() {
     visibility = View.INVISIBLE
 }
+
+fun View.isVisible() : Boolean = visibility == View.VISIBLE

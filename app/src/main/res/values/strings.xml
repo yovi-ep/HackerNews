@@ -8,4 +8,5 @@
     <string name="description">Description</string>
     <string name="comments">Comments</string>
     <string name="favorite_not_available">Favorite not available yet</string>
+    <string name="reply_by">Reply by</string>
 </resources>

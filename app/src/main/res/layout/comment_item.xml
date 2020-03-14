@@ -24,7 +24,7 @@
             android:textStyle="italic"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Reply by" />
+            android:text="@string/reply_by" />
 
         <TextView
             android:id="@+id/tv_commenter"
