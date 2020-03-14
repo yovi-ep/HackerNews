@@ -18,10 +18,12 @@ import yovi.putra.hackernews.core.utils.ui.toast
 import yovi.putra.hackernews.core.utils.ui.visible
 import yovi.putra.hackernews.data.entity.Story
 import yovi.putra.hackernews.features.detail.StoryDetailActivity
+import yovi.putra.hackernews.features.favorite.FavoriteViewModel
 
 class DashboardActivity : BaseActivity() {
 
     private val dashboardVM : DashboardViewModel by viewModel()
+    private val favoriteVM : FavoriteViewModel by viewModel()
     private lateinit var adapter: DashboardAdapter
 
 
@@ -29,8 +31,11 @@ class DashboardActivity : BaseActivity() {
 
     override fun setupData(savedInstanceState: Bundle?) {
         adapter = DashboardAdapter {
+            favoriteVM.storys.postValue(it.title)
             StoryDetailActivity.navigate(this, it)
         }
+
+        favoriteVM.storys.observe(this, favoriteObserver)
         dashboardVM.getTopStory(20)?.observe(this, storyObserve)
         dashboardVM.loader.observe(this, loadingObserver)
     }
@@ -60,6 +65,14 @@ class DashboardActivity : BaseActivity() {
         when (it) {
             is LoaderState.Show -> pb_loader.visible()
             is LoaderState.Hide -> pb_loader.invisible()
+        }
+    }
+
+    private var favoriteObserver = Observer<String> {
+        if (it.isEmpty()) {
+            tv_favorite.text = getString(R.string.favorite_not_available)
+        } else {
+            tv_favorite.text = it
         }
     }
 }

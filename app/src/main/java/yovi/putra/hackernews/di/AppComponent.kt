@@ -8,6 +8,7 @@ import yovi.putra.hackernews.data.remote.HackerNewsApi
 import yovi.putra.hackernews.data.repository.HackerNewsRepository
 import yovi.putra.hackernews.features.dashboard.DashboardViewModel
 import yovi.putra.hackernews.features.detail.StoryDetailViewModel
+import yovi.putra.hackernews.features.favorite.FavoriteViewModel
 
 val networkModule = module {
     single { RetrofitService.api<HackerNewsApi>() }
@@ -20,6 +21,7 @@ val dataSourceModule = module {
 val viewModelModule = module {
     viewModel { DashboardViewModel(get()) }
     viewModel { StoryDetailViewModel(get()) }
+    viewModel { FavoriteViewModel() }
 }
 
 val appModules: List<Module> = listOf(dataSourceModule, networkModule, viewModelModule)
