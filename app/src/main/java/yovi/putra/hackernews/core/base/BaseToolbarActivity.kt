@@ -5,14 +5,13 @@ import androidx.appcompat.widget.Toolbar
 abstract class BaseToolbarActivity : BaseActivity(), IToolbar {
 
     protected fun setToolbar(idToolbar: Int) {
-        val toolbar = findViewById<Toolbar>(idToolbar)
-        toolbar.let {
-            setSupportActionBar(toolbar)
+        findViewById<Toolbar>(idToolbar)?.let {
+            setSupportActionBar(it)
             supportActionBar?.setDisplayHomeAsUpEnabled(setButtonBack())
             supportActionBar?.setDisplayShowTitleEnabled(false)
 
             if (setButtonBack()) {
-                toolbar.setNavigationOnClickListener { finish() }
+                it.setNavigationOnClickListener { finish() }
             }
         }
     }

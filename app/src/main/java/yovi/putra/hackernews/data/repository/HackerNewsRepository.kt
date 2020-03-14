@@ -11,7 +11,6 @@ import yovi.putra.hackernews.data.entity.Story
 import yovi.putra.hackernews.data.remote.HackerNewsApi
 
 class HackerNewsRepository(private val api: HackerNewsApi) {
-    fun getComment(id: Int) : Observable<Comment> = api.getComment(id).compose(RxUtils.applyObservableAsync())
 
     fun getTopStory() : Observable<MutableList<Int>> = api.getTopStory().compose(RxUtils.applyObservableAsync())
 
@@ -20,5 +19,12 @@ class HackerNewsRepository(private val api: HackerNewsApi) {
             .subscribeOn(Schedulers.io())
             .flatMap {
                 api.getStory(it)
+            }
+
+    fun getComments(commentId: MutableList<Int>) : Observable<Comment> =
+        Observable.fromIterable(commentId)
+            .subscribeOn(Schedulers.io())
+            .flatMap {
+                api.getComment(it)
             }
 }

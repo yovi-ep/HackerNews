@@ -3,6 +3,7 @@ package yovi.putra.hackernews.features.dashboard
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -34,7 +35,7 @@ class DashboardActivity : BaseActivity() {
     }
 
     override fun setupUI(savedInstanceState: Bundle?) {
-        list_item.layoutManager = LinearLayoutManager(this)
+        list_item.layoutManager = GridLayoutManager(this, 2)
         list_item.overScrollMode = View.OVER_SCROLL_NEVER
         list_item.adapter = adapter
     }

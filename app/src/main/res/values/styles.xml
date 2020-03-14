@@ -8,13 +8,6 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="ToolbarTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:textColorPrimary">@color/colorTextViewSecondary</item>
-        <item name="actionMenuTextColor">@color/colorTextViewSecondary</item>
-        <item name="android:textColorSecondary">@color/colorTextViewSecondary</item>
-    </style>
-
-
     <!-- COMPONENT -->
     <style name="TextView" parent="android:TextAppearance">
         <item name="android:textColor">@color/colorTextViewSecondary</item>
@@ -25,11 +18,7 @@
         <item name="cardMaxElevation">@dimen/card_elevation_medium</item>
         <item name="cardElevation">@dimen/card_elevation_medium</item>
         <item name="cardCornerRadius">@dimen/card_radius_medium</item>
-
-        <item name="android:layout_marginTop">@dimen/margin_small</item>
-        <item name="android:layout_marginBottom">@dimen/margin_small</item>
-        <item name="android:layout_marginLeft">@dimen/margin_medium</item>
-        <item name="android:layout_marginRight">@dimen/margin_medium</item>
+        <item name="cardUseCompatPadding">true</item>
     </style>
 
     <!--___________ TEXT SIZE ___________-->
