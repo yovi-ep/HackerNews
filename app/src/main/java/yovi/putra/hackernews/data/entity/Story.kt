@@ -6,13 +6,13 @@ import java.util.*
 
 @Parcelize
 data class Story(
-    val by: String?,
-    val descendants: Int?,
-    val id: Int?,
-    val kids: MutableList<String>?,
-    val score: Int?,
-    val time: Date?,
-    val title: String?,
-    val type: String?,
-    val url: String?
+    val by: String? = "",
+    val descendants: Int? = 0,
+    val id: Int? = 0,
+    val kids: MutableList<String>? = mutableListOf(),
+    val score: Int? = 0,
+    val time: Date? = Date(),
+    val title: String? = "",
+    val type: String? = "",
+    val url: String? = ""
 ) : Parcelable

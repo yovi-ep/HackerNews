@@ -6,5 +6,7 @@
 
     <color name="colorTextViewSecondary">#6F6F6F</color>
 
+    <color name="divider">#DADADA</color>
+
     <color name="white">#FFFFFF</color>
 </resources>

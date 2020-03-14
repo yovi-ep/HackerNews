@@ -4,4 +4,7 @@
     <string name="no_internet_connection">Network problems, check your internet connection and please try again</string>
     <string name="server_under_maintenance">The server is under maintenance</string>
     <string name="cannot_connect_toserver">Unable to communicate with server, please try again later</string>
+
+    <string name="description">Description</string>
+    <string name="comments">Comments</string>
 </resources>

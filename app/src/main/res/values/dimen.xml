@@ -11,4 +11,6 @@
 
     <dimen name="card_elevation_medium">1.5dp</dimen>
     <dimen name="card_elevation_big">2dp</dimen>
+
+    <dimen name="margin_toolbar_loader">50dp</dimen>
 </resources>

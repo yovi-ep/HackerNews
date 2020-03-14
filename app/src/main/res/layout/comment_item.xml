@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/margin_extra_small"
+    app:cardBackgroundColor="@color/white"
+    app:cardElevation="@dimen/card_elevation_big"
+    app:cardCornerRadius="@dimen/card_radius_big">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_small"
+        android:background="?selectableItemBackground">
+
+
+        <TextView
+            android:id="@+id/lbl_comment"
+            style="@style/TextView.Small"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Reply by" />
+
+        <TextView
+            android:id="@+id/tv_comment"
+            style="@style/TextView.SmallBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="italic|bold"
+            android:layout_marginStart="@dimen/margin_extra_small"
+            app:layout_constraintStart_toEndOf="@+id/lbl_comment"
+            app:layout_constraintTop_toTopOf="@+id/lbl_comment"
+            tools:text="Novi" />
+
+        <TextView
+            android:id="@+id/tv_score"
+            style="@style/TextView.Small"
+            android:textStyle="italic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="20/03/2020" />
+
+        <TextView
+            android:id="@+id/tv_commenter"
+            style="@style/TextView.Small"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_extra_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_comment"
+            tools:text="My YC app: Dropbox - Throw away your USB drive" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
