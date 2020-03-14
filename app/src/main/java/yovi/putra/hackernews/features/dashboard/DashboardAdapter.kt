@@ -18,9 +18,16 @@ class DashboardAdapter(private val listener: (Story) -> Unit)
         VHolder(LayoutInflater
             .from(parent.context).inflate(R.layout.story_item, parent, false))
 
-    fun setItem(data: List<Story>?) {
+    fun addItem(data: List<Story>?) {
         data?.let {
             item.addAll(it)
+            this.notifyDataSetChanged()
+        }
+    }
+
+    fun addItem(data: Story?) {
+        data?.let {
+            item.add(it)
             this.notifyDataSetChanged()
         }
     }
@@ -37,7 +44,7 @@ class DashboardAdapter(private val listener: (Story) -> Unit)
 
             containerView.apply {
                 tv_title.text = data.title
-                tv_comment.text = (data.kids ?: 0).toString()
+                tv_comment.text = (data.kids?.size ?: 0).toString()
                 tv_score.text = (data.score ?: 0).toString()
                 setOnClickListener { listener(data) }
             }
